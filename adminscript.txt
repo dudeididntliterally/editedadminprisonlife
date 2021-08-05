@@ -1893,10 +1893,11 @@ end
     end)
     end)
 			elseif msg:match(prefix.."ia") then
-                		local j = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
-                		game.ReplicatedStorage.ReloadEvent:FireServer(j)
-                		wait(.5) for i, v in next, debug.getregistry() do if type(v) == "table"
-                    	then if v.Bullets then v.CurrentAmmo = 30 v.MaxAmmo = 30 end end end
+			    			for i = 1, math.huge, 1 do wait (1) pcall(function()
+						local j = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+						game.ReplicatedStorage.ReloadEvent:FireServer(j)
+						wait(.5) for i, v in next, debug.getregistry() do if type(v) == "table"
+						then if v.Bullets then v.CurrentAmmo = 30 v.MaxAmmo = 30 end end end end) end
 			elseif msg:match(prefix.."srg") then
 				loadstring(game:HttpGet(('https://textbin.net/raw/m6pc6xwtxx'),true))()
 			elseif msg:match(prefix.."m4") then
