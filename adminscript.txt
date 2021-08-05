@@ -1892,7 +1892,7 @@ end
                 end
     end)
     end)
-			elseif msg:match(prefix.."ia") then
+			elseif msg:match(prefix.."weaponia") then
 			    			for i = 1, math.huge, 1 do wait (1) pcall(function()
 						local j = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
 						game.ReplicatedStorage.ReloadEvent:FireServer(j)
