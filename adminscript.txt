@@ -2134,7 +2134,7 @@ local tbl_main =
 }
 game:GetService("Workspace").Remote.loadchar:InvokeServer(unpack(tbl_main))
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
-workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+workspace.Remote.TeamEvent:FireServer("Bright blue")
 wait(9.3)
 saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 local A_1 = "\66\114\111\121\111\117\98\97\100\100"
