@@ -907,7 +907,7 @@ sM["ReloadTime"] = 4
 sM["Bullets"] = 5
 sM["AutoFire"] = false
 			elseif msg:match(prefix.."k others") then
-                                        function getPacketFromPlayer(tget)
+                                function getPacketFromPlayer(tget)
                                         return {
                                                 ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
                                                 ["Distance"] = 0,
@@ -916,7 +916,7 @@ sM["AutoFire"] = false
                                         }
                                 end
                                 local arg1 = {}
-                                for i,v in pairs(game.Players:GetPlayers()) do
+                                for i,v in pairs(game.Players:GetChildren()) do
                                         for i2 = 1, 7 do
                                                 table.insert(arg1, getPacketFromPlayer(v))
                                         end
