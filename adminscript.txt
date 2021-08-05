@@ -2255,7 +2255,7 @@ end
         <fling - flings
         <adonis - fe admin for any game
         <close - Alt + F4
-        <ia - infinite ammo
+        <ia - infinite ammo (DOES WORK NOW)
         <k [i, g, c, all] - Teamkills
         <walls on - on walls
         <fences on - on fences
