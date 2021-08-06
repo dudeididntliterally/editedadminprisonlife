@@ -2084,7 +2084,6 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 end
 wait(0.01)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-936.546631, 94.1287842, 1990.08435)
-end
 			elseif msg:match(prefix .. "mgun") then
 			                   for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
                         if v:IsA("Tool") then
@@ -2274,7 +2273,7 @@ end
         ,rgb on - Cycles Colors
         ,rgb off - (off) Cycles Colors
         ,sagui - not really a good spam arrest but kinda good
-	,slayers - slayers admin (kinda rare cuz they took it down)
+        ,slayers - slayers admin (kinda rare cuz they took it down)
         ,saui - better spam arrest i think
         ,rj - Rejoin
         ,clothes - Removes Prison Clothes
