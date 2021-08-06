@@ -6,16 +6,16 @@
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Say <cmds And Look In Console For Cmds",
+	Text = "Say ,cmds And Look In Console For Cmds",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Your Prefix Is Currently < (enjoy)",
+	Text = "Your Prefix Is Currently , (enjoy)",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	wait(0.8)
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Loaded Scripts (yes) (prefix changed)",
+	Text = "Loaded Scripts (prefix is again changed)",
 	Color = Color3.fromRGB(44, 101, 29)
 	})
 	wait(0.5)
@@ -54,7 +54,7 @@
 	local Player = game:GetService("Players")
 	local LocalPlayer = Player.LocalPlayer
 	local PlayerScripts = LocalPlayer.PlayerScripts
-	local prefix = "<"
+	local prefix = ","
 
 	-- functions --
 	function loadchar(brickcolor)
@@ -2228,109 +2228,109 @@ end
 
 				print[[
         ---Main Commands---
-        <re - Respawns
-        <auto on - AutoRespawn
-        <auto off (off AutoRespawn)
-        <prefix - <prefix (NewPrefixHere)
-        <nopunch - No Punch
-        <saim - silent aim lock
-        <lag - LAGS SERVER (on/off)
-        <mgun - MINI GUN SHOTGUN - LAGGY ASF
-        <lag off - LAGS SERVER (on/off)
-        <sg on - open gate (on/off)
-        <sg off - open gate (on/off)
-        <god on - op godmode (on/off)
-        <god off - op godmode (on/off)
-        <bring - Brings a player
-        <crim - Crims a player (just use bring doing this as well)
-        <to (player) - Tp's to a player
-        <end - *DISCONNECTS* SERVER [BE CAREFUL]
-        <lguns on - Loopguns
-        <time - full bright
-        <lguns off - unloopguns
-        <barcodehub - another free admin
-        <fling - flings
-        <adonis - fe admin for any game
-        <close - Alt + F4
-        <weaponia - infinite ammo (DOES WORK NOW)
-        <k [i, g, c, others] - Teamkills (others is broken at the moment but k g and stuff still works)
-        <walls on - on walls
-        <fences on - on fences
-        <doors on - on doors
-        <doors off - off doors
-        <fences off - off fences
-        <walls off - off walls
-        <ring - rings ears and everybody CAN hear it (doesnt bypass anti crash)
-        <asa on - anti spam arrest (on/off)
-        <asa off - anti spam arrest (on/off)
-        <fix - Camera Fix
-        <btools - (delete certain walls)
-        <display - Display Mode (just use <time)
-        <lock - Anti taze
-        <chat - Chat Bypass
-        <tazeall- DONT USE (fixing as well)
-        <headless - Headless Head
-        <noleg - No Legs
-        <rgb on - Cycles Colors
-        <rgb off - (off) Cycles Colors
-        <sagui - not really a good spam arrest but kinda good
-	<slayers - slayers admin (kinda rare cuz they took it down)
-        <saui - better spam arrest i think
-        <rj - Rejoin
-        <clothes - Removes Prison Clothes
-        <m4 - Gives M4
-        <ak - Gives AK
-        <remi - Gives REMI
-        <m9 - Gives M9
-        <ab - Antibring (op breaks all guns)
+        ,re - Respawns
+        ,auto on - AutoRespawn
+        ,auto off (off AutoRespawn)
+        ,prefix - <prefix (NewPrefixHere)
+        ,nopunch - No Punch
+        ,saim - silent aim lock
+        ,lag - LAGS SERVER (on/off)
+        ,mgun - MINI GUN SHOTGUN - LAGGY ASF
+        ,lag off - LAGS SERVER (on/off)
+        ,sg on - open gate (on/off)
+        ,sg off - open gate (on/off)
+        ,god on - op godmode (on/off)
+        ,god off - op godmode (on/off)
+        ,bring - Brings a player
+        ,crim - Crims a player (just use bring doing this as well)
+        ,to (player) - Tp's to a player
+        ,end - *DISCONNECTS* SERVER [BE CAREFUL]
+        ,lguns on - Loopguns
+        ,time - full bright
+        ,lguns off - unloopguns
+        ,barcodehub - another free admin
+        ,fling - flings
+        ,adonis - fe admin for any game
+        ,close - Alt + F4
+        ,weaponia - infinite ammo (DOES WORK NOW)
+        ,k [i, g, c, others] - Teamkills (others is broken at the moment but k g and stuff still works)
+        ,walls on - on walls
+        ,fences on - on fences
+        ,doors on - on doors
+        ,doors off - off doors
+        ,fences off - off fences
+        ,walls off - off walls
+        ,ring - rings ears and everybody CAN hear it (doesnt bypass anti crash)
+        ,asa on - anti spam arrest (on/off)
+        ,asa off - anti spam arrest (on/off)
+        ,fix - Camera Fix
+        ,btools - (delete certain walls)
+        ,display - Display Mode (just use <time)
+        ,lock - Anti taze
+        ,chat - Chat Bypass
+        ,tazeall- DONT USE (fixing as well)
+        ,headless - Headless Head
+        ,noleg - No Legs
+        ,rgb on - Cycles Colors
+        ,rgb off - (off) Cycles Colors
+        ,sagui - not really a good spam arrest but kinda good
+	,slayers - slayers admin (kinda rare cuz they took it down)
+        ,saui - better spam arrest i think
+        ,rj - Rejoin
+        ,clothes - Removes Prison Clothes
+        ,m4 - Gives M4
+        ,ak - Gives AK
+        ,remi - Gives REMI
+        ,m9 - Gives M9
+        ,ab - Antibring (op breaks all guns)
 
 
         ---Teleports--
-        <moutain
-        <empty
-        <safe
-        <back
-        <gate
-        <flag
-        <cell
-        <roof
-        <cafe
-        <nex
-        <armory
-        <sewer
-        <unmap
-        <store
-        <gas
-        <bus
-        <bridge
-        <yard
-        <cbase
+        ,moutain
+        ,empty
+        ,safe
+        ,back
+        ,gate
+        ,flag
+        ,cell
+        ,roof
+        ,cafe
+        ,nex
+        ,armory
+        ,sewer
+        ,unmap
+        ,store
+        ,gas
+        ,bus
+        ,bridge
+        ,yard
+        ,cbase
 
         ---Team Stuff---
-        <t custom (NUMBER)
-        <t dr - DARK RED
-        <t bp - BRIGHT PURPLE
-        <t p - PURPLE
-        <t fb - FAWN BROWN
-        <t mg - MID GRAY
-        <t hp - HOT PINK
-        <t t - TEAL (this works)
-        <t dt - DARK TAUPE
-        <t b - BLACK
-        <t c - CAMO
-        <t too - TOOTHPASTE (will be fixed soon)
-        <t rb - REALLY BLACK
-        <t rp - ROYAL PURPLE
-        <t sun - SUNRISE
-        <t lp - LIGHT PURPLE
-        <t g - GOLD
-        <t n - NOUGAT
-        <t rl - REDDISH LILAC
-        <t m - MINT
-        <crim
-        <g
-        <neu
-        <i
+        ,t custom (NUMBER)
+        ,t dr - DARK RED
+        ,t bp - BRIGHT PURPLE
+        ,t p - PURPLE
+        ,t fb - FAWN BROWN
+        ,t mg - MID GRAY
+        ,t hp - HOT PINK
+        ,t t - TEAL (this works)
+        ,t dt - DARK TAUPE
+        ,t b - BLACK
+        ,t c - CAMO
+        ,t too - TOOTHPASTE (will be fixed soon)
+        ,t rb - REALLY BLACK
+        ,t rp - ROYAL PURPLE
+        ,t sun - SUNRISE
+        ,t lp - LIGHT PURPLE
+        ,t g - GOLD
+        ,t n - NOUGAT
+        ,t rl - REDDISH LILAC
+        ,t m - MINT
+        ,crim
+        ,g
+        ,neu
+        ,i
     ]]
 
 			end-- cmd end
