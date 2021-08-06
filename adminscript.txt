@@ -1,6 +1,3 @@
-    local gunscript = game.Players.LocalPlayer.PlayerScripts.ClientGunReplicator
-    gunscript.Disabled = true
-    
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
 	Text = "Original Script By Midnight#0004 Changes By Xx1400gangxX#1766",
 	Color = Color3.fromRGB(207, 96, 36)
