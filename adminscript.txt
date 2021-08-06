@@ -975,30 +975,224 @@ sM["AutoFire"] = false
 				end
 			elseif msg:match(prefix .. "re") then
 				loadchar()
-			elseif msg:match(prefix .. "tazeall") then
-		workspace.Remote.TeamEvent:FireServer("Bright blue")
+			elseif msg:match(prefix .. "punish on") then
+_G.toggle = true
 
-                function kill(a)
-                local A_1 = 
-                {
-            	[1] = 
-                {
-            	["RayObject"] = Ray.new(Vector3.new(829.838562, 101.489998, 2331.25635), Vector3.new(-30.6540909, -5.42795324, 95.0308533)), 
-            	["Distance"] = 15.355997085571, 
-            	["Cframe"] = CFrame.new(826.616699, 100.8508, 2340.11279, 0.964640439, -0.00993416365, -0.263382077, 9.31322575e-10, 0.999289393, -0.0376908854, 0.263569355, 0.0363581516, 0.963954985), 
-            	["Hit"] = a.Character.Torso
-                }
-                }
-                local A_2 = game.Players.LocalPlayer.Backpack["Taser"]
-                local Event = game:GetService("ReplicatedStorage").ShootEvent
-                Event:FireServer(A_1, A_2)
-                end
+while _G.toggle == true do
+wait()
+local function punish()
+local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+Workspace.Remote.TeamEvent:FireServer("Bright blue")
+game:GetService("Workspace").Remote.loadchar:InvokeServer()
+wait(0.1)
+function getPacketFromPlayer(tget)
+        return {
+        ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+        ["Distance"] = 0,
+        ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+        ["Hit"] = tget.Character.Torso
+        }
+        end
+        local arg1 = {}
+        for i,v in pairs(game.Players:GetPlayers()) do
+        for i2=1,7 do
+        table.insert(arg1,getPacketFromPlayer(v))
+        end
+        end
+        local gun = game.Players.LocalPlayer.Backpack['Taser']
+        game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun)  
 
-                for i,v in pairs(game.Players:GetChildren())do
-                if v.Name ~= game.Players.LocalPlayer.Name then
-                kill(v)
-                end
-                end
+        wait(0.1)
+        function getPacketFromPlayer(tget)
+        return {
+        ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+        ["Distance"] = 0,
+        ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+        ["Hit"] = tget.Character.Torso
+        }
+        end
+        local arg1 = {}
+        for i,v in pairs(game.Players:GetPlayers()) do
+        for i2=1,7 do
+        table.insert(arg1,getPacketFromPlayer(v))
+        end
+        end
+        local gun = game.Players.LocalPlayer.Backpack['Taser']
+        game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun)  
+        wait(0.1)
+        function getPacketFromPlayer(tget)
+        return {
+        ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+        ["Distance"] = 0,
+        ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+        ["Hit"] = tget.Character.Torso
+        }
+        end
+        local arg1 = {}
+        for i,v in pairs(game.Players:GetPlayers()) do
+        for i2=1,7 do
+        table.insert(arg1,getPacketFromPlayer(v))
+        end
+        end 
+        local gun = game.Players.LocalPlayer.Backpack['Taser']
+        game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun)  
+        wait(0.1)
+        function getPacketFromPlayer(tget)
+        return {
+        ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+        ["Distance"] = 0,
+        ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+        ["Hit"] = tget.Character.Torso
+        }
+        end
+        local arg1 = {}
+        for i,v in pairs(game.Players:GetPlayers()) do
+        for i2=1,7 do
+        table.insert(arg1,getPacketFromPlayer(v))
+        end
+        end
+        local gun = game.Players.LocalPlayer.Backpack['Taser']
+        game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun)  
+       wait(0.2)
+       game:GetService("Workspace").Remote.loadchar:InvokeServer()
+       Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+         wait(0.1)
+         game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP) --Remington 870
+         wait(0.1)
+         function getPacketFromPlayer(tget)
+         return {
+         ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+         ["Distance"] = 0,
+         ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+         ["Hit"] = tget.Character.Head
+         }
+         end
+         local arg1 = {}
+         for i,v in pairs(game.Players:GetPlayers()) do
+         for i2=1,7 do
+         table.insert(arg1,getPacketFromPlayer(v))
+         end
+         end
+         local gun = game.Players.LocalPlayer.Backpack['Remington 870']
+         game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun) 
+         wait(0.1)
+        Workspace.Remote.TeamEvent:FireServer("Bright blue")
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+        end
+for i = 1,10 do wait()
+	punish()
+end
+end
+			elseif msg:match(prefix .. "punish off") then
+_G.toggle = false
+
+while _G.toggle == true do
+wait()
+local function punish()
+local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+Workspace.Remote.TeamEvent:FireServer("Bright blue")
+game:GetService("Workspace").Remote.loadchar:InvokeServer()
+wait(0.1)
+function getPacketFromPlayer(tget)
+        return {
+        ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+        ["Distance"] = 0,
+        ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+        ["Hit"] = tget.Character.Torso
+        }
+        end
+        local arg1 = {}
+        for i,v in pairs(game.Players:GetPlayers()) do
+        for i2=1,7 do
+        table.insert(arg1,getPacketFromPlayer(v))
+        end
+        end
+        local gun = game.Players.LocalPlayer.Backpack['Taser']
+        game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun)  
+
+        wait(0.1)
+        function getPacketFromPlayer(tget)
+        return {
+        ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+        ["Distance"] = 0,
+        ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+        ["Hit"] = tget.Character.Torso
+        }
+        end
+        local arg1 = {}
+        for i,v in pairs(game.Players:GetPlayers()) do
+        for i2=1,7 do
+        table.insert(arg1,getPacketFromPlayer(v))
+        end
+        end
+        local gun = game.Players.LocalPlayer.Backpack['Taser']
+        game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun)  
+        wait(0.1)
+        function getPacketFromPlayer(tget)
+        return {
+        ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+        ["Distance"] = 0,
+        ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+        ["Hit"] = tget.Character.Torso
+        }
+        end
+        local arg1 = {}
+        for i,v in pairs(game.Players:GetPlayers()) do
+        for i2=1,7 do
+        table.insert(arg1,getPacketFromPlayer(v))
+        end
+        end 
+        local gun = game.Players.LocalPlayer.Backpack['Taser']
+        game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun)  
+        wait(0.1)
+        function getPacketFromPlayer(tget)
+        return {
+        ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+        ["Distance"] = 0,
+        ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+        ["Hit"] = tget.Character.Torso
+        }
+        end
+        local arg1 = {}
+        for i,v in pairs(game.Players:GetPlayers()) do
+        for i2=1,7 do
+        table.insert(arg1,getPacketFromPlayer(v))
+        end
+        end
+        local gun = game.Players.LocalPlayer.Backpack['Taser']
+        game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun)  
+       wait(0.2)
+       game:GetService("Workspace").Remote.loadchar:InvokeServer()
+       Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+         wait(0.1)
+         game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP) --Remington 870
+         wait(0.1)
+         function getPacketFromPlayer(tget)
+         return {
+         ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
+         ["Distance"] = 0,
+         ["Cframe"] = CFrame.new(0,0,0,0,0,0,0,0,0,0,0,0),
+         ["Hit"] = tget.Character.Head
+         }
+         end
+         local arg1 = {}
+         for i,v in pairs(game.Players:GetPlayers()) do
+         for i2=1,7 do
+         table.insert(arg1,getPacketFromPlayer(v))
+         end
+         end
+         local gun = game.Players.LocalPlayer.Backpack['Remington 870']
+         game:GetService('ReplicatedStorage').ShootEvent:FireServer(arg1,gun) 
+         wait(0.1)
+        Workspace.Remote.TeamEvent:FireServer("Bright blue")
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+        end
+for i = 1,10 do wait()
+	punish()
+end
+end
 
 			elseif msg:match(prefix .. "prefix ") then
 				prefix = (msg:sub(9))
@@ -2267,7 +2461,8 @@ end
         ,display - Display Mode (just use <time)
         ,lock - Anti taze
         ,chat - Chat Bypass
-        ,tazeall- DONT USE (fixing as well)
+        ,punish on (on/off) GOT RID OF TAZE ALL! (does work btw)
+        ,punish off (on/off) GOT RID OF TAZE ALL! (does work btw)
         ,headless - Headless Head
         ,noleg - No Legs
         ,rgb on - Cycles Colors
