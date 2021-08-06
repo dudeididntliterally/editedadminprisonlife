@@ -25,7 +25,7 @@
 	})
 	wait(0.4)
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "GUI Host Is Down At The Moment (Only Commands)",
+	Text = "pastescript.me is dumb because the webhost is gone (Only Commands STILL)",
 	Color = Color3.fromRGB(9, 137, 207)
 	})
     
@@ -2045,48 +2045,46 @@ end
                 game.Lighting.Warehouse2.Parent = game.workspace
                 game.Lighting.Warehouse2.Parent = game.workspace
 			elseif msg:match(prefix.."bring ") then
-				function EquipTools()
-					for a, b in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-						if b:IsA("Tool") and b.Name == "Bring Gun" then
-							b.Parent = game.Players.LocalPlayer.Character
-						end
-					end
-				end
-				local function DestroyHum()
-					local a = game.Players.LocalPlayer
-					if a.Character then
-						if a.Character:FindFirstChild("Humanoid") then
-							a.Character.Humanoid.Name = "1"
-						end
-						local b = a.Character["1"]:Clone()
-						b.Parent = a.Character
-						b.Name = "Humanoid"
-						wait(0.1)
-						a.Character["1"]:Destroy()
-						workspace.CurrentCamera.CameraSubject = a.Character.Humanoid
-						a.Character.Animate.Disabled = true
-						wait(0.1)
-						a.Character.Animate.Disabled = false
-					end
-				end
-				function tp(lol)
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = findPlr(lol).Character.HumanoidRootPart.CFrame
-				end
-				workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.single["Crude Knife"].ITEMPICKUP)
-				game.Players.LocalPlayer.Backpack["Crude Knife"].Name = "Bring Gun"
-				_startpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				DestroyHum()
-				EquipTools()
-				repeat
-					wait()
-					tp(msg:sub(8))
-				until findPlr(tostring(msg:sub(8))).Character:FindFirstChild("Bring Gun")
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = _startpos
-				wait(0.6)
-				_startpos2 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-				workspace["Remote"].loadchar:InvokeServer()
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = _startpos2
-				findPlr(tostring(msg:sub(8))).Character:FindFirstChild("Bring Gun").Name = "nigger die"
+for i,v in pairs(GetPlayer(msg:sub(8))) do
+game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP)
+		local mainhand = game.Players.LocalPlayer.Backpack:FindFirstChild("Remington 870").Handle
+		mainhand.Size = Vector3.new(5, 5, 5)
+		local NOW = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		game.Players.LocalPlayer.Character.Humanoid.Name = 1
+		local l = game.Players.LocalPlayer.Character["1"]:Clone()
+		l.Parent = game.Players.LocalPlayer.Character
+		l.Name = "Humanoid"
+		wait(0.2)
+		game.Players.LocalPlayer.Character["1"]:Destroy()
+		game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+		wait(0.2)
+		game.Players.LocalPlayer.Character.Animate.Disabled = true
+		game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+		for i,x in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+		game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+		end
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+		wait(0.2)
+		for i,x in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+		game.Players.LocalPlayer.Character.Humanoid:EquipTool(x)
+		end
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = NOW
+		wait(0.01)
+		game.Players.LocalPlayer.Character:MoveTo(v.Character.Position)
+		wait(0.2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = NOW
+		wait(0.001)
+saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local A_1 = "\66\114\111\121\111\117\98\97\100\100"
+local Event = game:GetService("Workspace").Remote.loadchar
+Event:InvokeServer(A_1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+end
+wait(0.01)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-936.546631, 94.1287842, 1990.08435)
+end
 			elseif msg:match(prefix .. "mgun") then
 			                   for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
                         if v:IsA("Tool") then
@@ -2165,7 +2163,6 @@ Event:InvokeServer(A_1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 end
 			elseif msg:match(prefix.."crim ") then
-
 				function EquipTools()
 					for a, b in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 						if b:IsA("Tool") and b.Name == "Bring Gun" then
@@ -2193,8 +2190,8 @@ end
 				function tp(lol)
 					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = findPlr(lol).Character.HumanoidRootPart.CFrame
 				end
-				workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.single["Crude Knife"].ITEMPICKUP)
-				game.Players.LocalPlayer.Backpack["Crude Knife"].Name = "Bring Gun"
+				workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.single["Hammer"].ITEMPICKUP)
+				game.Players.LocalPlayer.Backpack["Hammer"].Name = "Bring Gun"
 				_startpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 				DestroyHum()
 				EquipTools()
@@ -2209,7 +2206,7 @@ end
 				_startpos2 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 				workspace["Remote"].loadchar:InvokeServer()
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = _startpos2
-				findPlr(tostring(msg:sub(8))).Character:FindFirstChild("Bring Gun").Name = "nigger die"
+				findPlr(tostring(msg:sub(8))).Character:FindFirstChild("Bring Gun").Name = "ok bet"
 			elseif msg:match(prefix.."ab") then
 				local char = game.Players.LocalPlayer.Character
 				char.Parent = nil
@@ -2245,7 +2242,7 @@ end
         <god on - op godmode (on/off)
         <god off - op godmode (on/off)
         <bring - Brings a player
-        <crim - Crims a player
+        <crim - Crims a player (just use bring doing this as well)
         <to (player) - Tp's to a player
         <end - *DISCONNECTS* SERVER [BE CAREFUL]
         <lguns on - Loopguns
@@ -2255,8 +2252,8 @@ end
         <fling - flings
         <adonis - fe admin for any game
         <close - Alt + F4
-        <ia - infinite ammo (DOES WORK NOW)
-        <k [i, g, c, all] - Teamkills
+        <weaponia - infinite ammo (DOES WORK NOW)
+        <k [i, g, c, others] - Teamkills (others is broken at the moment but k g and stuff still works)
         <walls on - on walls
         <fences on - on fences
         <doors on - on doors
@@ -2268,15 +2265,16 @@ end
         <asa off - anti spam arrest (on/off)
         <fix - Camera Fix
         <btools - (delete certain walls)
-        <display - Display Mode
+        <display - Display Mode (just use <time)
         <lock - Anti taze
         <chat - Chat Bypass
-        <tazeall- Taze All
+        <tazeall- DONT USE (fixing as well)
         <headless - Headless Head
         <noleg - No Legs
         <rgb on - Cycles Colors
         <rgb off - (off) Cycles Colors
         <sagui - not really a good spam arrest but kinda good
+	<slayers - slayers admin (kinda rare cuz they took it down)
         <saui - better spam arrest i think
         <rj - Rejoin
         <clothes - Removes Prison Clothes
@@ -2284,9 +2282,7 @@ end
         <ak - Gives AK
         <remi - Gives REMI
         <m9 - Gives M9
-        <sagui - Spam Arrest Gui 3x Is OP (do <al first)
-        <saui - more spam arrest
-        <ab - Antibring
+        <ab - Antibring (op breaks all guns)
 
 
         ---Teleports--
