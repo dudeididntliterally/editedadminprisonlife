@@ -1252,12 +1252,12 @@ end
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character.ChildAdded:Connect(function(Item)
             if States_RapidFire then
-                local Tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool")
+                local Gun = game.Players.LocalPlayer.Backpack:FindFirstChild("Remington 870")
                 local Name
                 local Req
-                if Tool then
+                if Gun then
                     CAN = true
-                    Name = Tool.Name
+                    Name = Gun.Name
                     if Tool:FindFirstChild("GunStates") then
                         Req = require(Tool.GunStates)
                         Req["MaxAmmo"] = Req["MaxAmmo"]
@@ -1276,14 +1276,14 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function()
                     pcall(function()
                         if game.Players.LocalPlayer.Character:FindFirstChild(Name) and CAN then
                             if Req["CurrentAmmo"] < 1 then
-                                Tool:Destroy()
+                                Gun:Destroy()
                                 workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver[Name].ITEMPICKUP)
-                                Tool = game.Players.LocalPlayer.Backpack:FindFirstChild(Name)
-                                if Tool then
-                                    Name = Tool.Name
-                                    Tool.Parent = game.Players.LocalPlayer.Character
-                                    Tool = game.Players.LocalPlayer.Character[Name]
-                                    Req = require(Tool.GunStates)
+                                Gun = game.Players.LocalPlayer.Backpack:FindFirstChild("Remington 870")
+                                if Gun then
+                                    Name = Gun.Name
+                                    Gun.Parent = game.Players.LocalPlayer.Character
+                                    Gun = game.Players.LocalPlayer.Character[Name]
+                                    Req = require(Gun.GunStates)
                                     Req["MaxAmmo"] = Req["MaxAmmo"]
                                     Req["StoredAmmo"] = Req["StoredAmmo"]
                                     Req["AmmoPerClip"] = Req["AmmoPerClip"]
