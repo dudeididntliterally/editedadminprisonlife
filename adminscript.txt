@@ -2450,27 +2450,27 @@ end
         ,fix - Camera Fix
         ,btools - (delete certain walls)
         ,display - Display Mode (just use ,time)
-	,ca on - click arrest (on/off)
-	,ca off - click arrest (on/off)
-	,tk - touch kill (goes away when you reset)
-	,ltk - touch kill (does not go away when you reset)
-	,asa on - op anti spam arrest (on/off)
-	,asa off - op anti spam arrest (on/off)
-	,ff on - op ff (on/off)
-	,ff off - op ff (on/off)
-	,scd on - opens crim door i believe (on/off)
-	,scd off - opens crim door i believe (on/off)
-	,slayers - a free admin that also they took it down so i put it on here
-	,saim - silent aim gui
-	,nolag - no swat lag
-	,al - anti spam arrest lag
-	,ws (number)
-	,jp (number)
-	,fling - flings everything that touches you
-	,invis - invisible as it says
-	,kcf - key card finder
-	,ka - kill aura (e to toggle)
-	,ar all - arrest all crims
+        ,ca on - click arrest (on/off)
+        ,ca off - click arrest (on/off)
+        ,tk - touch kill (goes away when you reset)
+        ,ltk - touch kill (does not go away when you reset)
+        ,asa on - op anti spam arrest (on/off)
+        ,asa off - op anti spam arrest (on/off)
+        ,ff on - op ff (on/off)
+        ,ff off - op ff (on/off)
+        ,scd on - opens crim door i believe (on/off)
+        ,scd off - opens crim door i believe (on/off)
+        ,slayers - a free admin that also they took it down so i put it on here
+        ,saim - silent aim gui
+        ,nolag - no swat lag
+        ,al - anti spam arrest lag
+        ,ws (number)
+        ,jp (number)
+        ,fling - flings everything that touches you
+        ,invis - invisible as it says
+        ,kcf - key card finder
+        ,ka - kill aura (e to toggle)
+        ,ar all - arrest all crims
         ,lock - anti taze
         ,chat - chat Bypass
         ,punish on (on/off) GOT RID OF TAZE ALL! (does work btw)
