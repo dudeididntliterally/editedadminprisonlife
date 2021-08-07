@@ -1296,11 +1296,11 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function()
                                     Req["AutoFire"] = true
                                 end
                             end
-
-                    end)
-                end
+                    end
+                end)
             end
         end)
+    end)
 			elseif msg:match(prefix .. "invis") then
 				local player = game.Players.LocalPlayer
 position     = player.Character.HumanoidRootPart.Position
