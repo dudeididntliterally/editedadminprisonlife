@@ -913,7 +913,7 @@ sM["AutoFire"] = false
                                         }
                                 end
                                 local arg1 = {}
-                                for i,v in pairs(game.Players:GetChildren()) do
+                                for i, v in pairs(game.Players:GetChildren()) do
                                         for i2 = 1, 7 do
                                                 table.insert(arg1, getPacketFromPlayer(v))
                                         end
@@ -1203,7 +1203,7 @@ end
 			elseif msg:match(prefix .. "sagui") then
 				loadstring(game:HttpGet("https://pastebin.com/raw/nu20tAZE"))()
 				wait(0.3)
-			    loadstring(game:HttpGet("https://pastebin.com/raw/nu20tAZE"))()
+			    	loadstring(game:HttpGet("https://pastebin.com/raw/nu20tAZE"))()
 				wait(0.3)
 				loadstring(game:HttpGet("https://pastebin.com/raw/nu20tAZE"))()
 			elseif msg:match(prefix .. "fling") then
@@ -1248,7 +1248,7 @@ end
 				end
 			elseif msg:match(prefix .. "noleg") then
 				LocalPlayer.Character["Right Leg"]:Destroy()
-			elseif msg:match(prefix .. "rf") then
+			elseif msg:match(prefix .. "opguns") then
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
         game.Players.LocalPlayer.Character.ChildAdded:Connect(function(Item)
             if States_RapidFire then
@@ -1326,7 +1326,7 @@ game.Players.LocalPlayer.Character.Head.face:Remove()
 			
 			elseif msg:match(prefix .. "adonis") then
 				loadstring(game:HttpGet("https://pastebin.com/raw/MQ3wc7Zq", true))()
-			elseif msg:match(prefix .. "kfc") then
+			elseif msg:match(prefix .. "kcf") then
 				local Remote = game.Workspace.Remote['ItemHandler']
  
 				local Arguments = {
@@ -2089,8 +2089,6 @@ end
 						game.ReplicatedStorage.ReloadEvent:FireServer(j)
 						wait(.5) for i, v in next, debug.getregistry() do if type(v) == "table"
 						then if v.Bullets then v.CurrentAmmo = 30 v.MaxAmmo = 30 end end end end) end
-			elseif msg:match(prefix.."srg") then
-				loadstring(game:HttpGet(('https://textbin.net/raw/m6pc6xwtxx'),true))()
 			elseif msg:match(prefix.."m4") then
 				game.Workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
 			elseif msg:match(prefix.."ak") then
@@ -2104,8 +2102,6 @@ end
 				for i = 1,99 do
 					game.workspace.Prison_ITEMS.clothes.Parent = game.Lighting
 				end
-			elseif msg:match(prefix .. "script") then
-				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("script edited by Xx1400gangxX # 17 66", "All")
 			elseif msg:match(prefix .. "clothes") then
 				saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 				local tbl_main = 
@@ -2117,8 +2113,6 @@ end
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 				wait(0.001)
 				workspace.Remote.TeamEvent:FireServer("Bright orange")
-			elseif msg:match(prefix .. "clothes") then
-
 				-- TELEPORTS KILL ME TOOK FOR EVER --
 			elseif msg:match(prefix.."nex") then
 				LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(942.865479, 99.9900055, 2394.74512, 0.999985993, 4.10922052e-09, -0.00528888358, -4.26388658e-09, 1, -2.92323694e-08, 0.00528888358, 2.92545117e-08, 0.999985993)
@@ -2421,7 +2415,7 @@ end
         ,re - Respawns
         ,auto on - AutoRespawn
         ,auto off (off AutoRespawn)
-        ,prefix - <prefix (NewPrefixHere)
+        ,prefix - ,prefix (NewPrefixHere)
         ,nopunch - No Punch
         ,saim - silent aim lock
         ,lag - LAGS SERVER (on/off)
@@ -2455,9 +2449,30 @@ end
         ,asa off - anti spam arrest (on/off)
         ,fix - Camera Fix
         ,btools - (delete certain walls)
-        ,display - Display Mode (just use <time)
-        ,lock - Anti taze
-        ,chat - Chat Bypass
+        ,display - Display Mode (just use ,time)
+	,ca on - click arrest (on/off)
+	,ca off - click arrest (on/off)
+	,tk - touch kill (goes away when you reset)
+	,ltk - touch kill (does not go away when you reset)
+	,asa on - op anti spam arrest (on/off)
+	,asa off - op anti spam arrest (on/off)
+	,ff on - op ff (on/off)
+	,ff off - op ff (on/off)
+	,scd on - opens crim door i believe (on/off)
+	,scd off - opens crim door i believe (on/off)
+	,slayers - a free admin that also they took it down so i put it on here
+	,saim - silent aim gui
+	,nolag - no swat lag
+	,al - anti spam arrest lag
+	,ws (number)
+	,jp (number)
+	,fling - flings everything that touches you
+	,invis - invisible as it says
+	,kcf - key card finder
+	,ka - kill aura (e to toggle)
+	,ar all - arrest all crims
+        ,lock - anti taze
+        ,chat - chat Bypass
         ,punish on (on/off) GOT RID OF TAZE ALL! (does work btw)
         ,punish off (on/off) GOT RID OF TAZE ALL! (does work btw)
         ,headless - Headless Head
