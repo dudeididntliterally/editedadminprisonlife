@@ -1,5 +1,5 @@
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Original Script By Midnight#0004 Changes By Xx1400gangxX#1766",
+	Text = "Original Script By Midnight#0004 Changes By GETONTHEGROUND#1766",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
@@ -25,22 +25,6 @@
 	Text = "pastescript.me is dumb because the webhost is gone (Only Commands STILL)",
 	Color = Color3.fromRGB(9, 137, 207)
 	})
-    
-  game.Players.ChildAdded:Connect(function(player)
-  if not pcall (function()
-  SendNotification("Player Joined",""..player.Name.."  has entered the server.",2.5 )
-  end) then
-    print ("Error")
-  end
-  end)
-  
-  game.Players.ChildRemoved:Connect(function(player)
-  if not pcall (function()
-  SendNotification("Player Left",""..player.Name.."  has left the server.",2.5 )
-  end) then
-    print ("Error")
-  end
-  end)
   
 	game:GetService("Players").LocalPlayer.PlayerGui.Home.fadeFrame.Visible = false
 
@@ -903,7 +887,7 @@ sM["Range"] = 400
 sM["ReloadTime"] = 4
 sM["Bullets"] = 5
 sM["AutoFire"] = false
-			elseif msg:match(prefix.."k others") then
+			elseif msg:match(prefix.."k all") then
                                 function getPacketFromPlayer(tget)
                                         return {
                                                 ["RayObject"] = Ray.new(Vector3.new(0,0,0), Vector3.new(0,0,0)),
@@ -1249,60 +1233,60 @@ end
 			elseif msg:match(prefix .. "noleg") then
 				LocalPlayer.Character["Right Leg"]:Destroy()
 			elseif msg:match(prefix .. "opguns") then
-game.Players.LocalPlayer.CharacterAdded:Connect(function()
-        game.Players.LocalPlayer.Character.ChildAdded:Connect(function(Item)
-
-                local Gun = game.Players.LocalPlayer.Backpack:FindFirstChild("Remington 870")
-                local Name
-                local Req
-                if Gun then
-                    CAN = true
-                    Name = Gun.Name
-                    if Tool:FindFirstChild("GunStates") then
-                        Req = require(Tool.GunStates)
-                        Req["MaxAmmo"] = Req["MaxAmmo"]
-                        Req["StoredAmmo"] = Req["StoredAmmo"]
-                        Req["AmmoPerClip"] = Req["AmmoPerClip"]
-                        Req["CurrentAmmo"] = Req["CurrentAmmo"]
-                        Req["FireRate"] = -math.huge
-                        Req["Bullets"] = 25
-                        Req["Range"] = math.huge
-                        Req["Damage"] = math.huge
-                        Req["ReloadTime"] = -math.huge
-                        Req["AutoFire"] = true
-                    end
-                end
-                while wait() do
-                    pcall(function()
-                        if game.Players.LocalPlayer.Character:FindFirstChild(Name) and CAN then
-                            if Req["CurrentAmmo"] < 1 then
-                                Gun:Destroy()
-                                workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver[Name].ITEMPICKUP)
-                                Gun = game.Players.LocalPlayer.Backpack:FindFirstChild("Remington 870")
-                                if Gun then
-                                    Name = Gun.Name
-                                    Gun.Parent = game.Players.LocalPlayer.Character
-                                    Gun = game.Players.LocalPlayer.Character[Name]
-                                    Req = require(Gun.GunStates)
-                                    Req["MaxAmmo"] = Req["MaxAmmo"]
-                                    Req["StoredAmmo"] = Req["StoredAmmo"]
-                                    Req["AmmoPerClip"] = Req["AmmoPerClip"]
-                                    Req["CurrentAmmo"] = Req["CurrentAmmo"]
-                                    Req["FireRate"] = -math.huge
-                                    Req["Bullets"] = 25
-                                    Req["Range"] = math.huge
-                                    Req["Damage"] = math.huge
-                                    Req["ReloadTime"] = -math.huge
-                                    Req["AutoFire"] = true
-                                end
-                            end
-                    end
-                end)
-            end
-        end)
-    end)
+local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = math.huge
+sM["MaxAmmo"] = math.huge
+sM["CurrentAmmo"] = math.huge
+sM["StoredAmmo"] = math.huge
+sM["FireRate"] = -math.huge
+sM["AmmoPerClip"] = math.huge
+sM["Range"] = math.huge
+sM["ReloadTime"] = -math.huge
+sM["Bullets"] = 5
+sM["AutoFire"] = true
+wait(0.1)
+local pistol = player.Backpack:FindFirstChild("M9")
+local sM = require(pistol:FindFirstChild("GunStates"))
+sM["Damage"] = math.huge
+sM["MaxAmmo"] = math.huge
+sM["CurrentAmmo"] = math.huge
+sM["StoredAmmo"] = math.huge
+sM["FireRate"] = -math.huge
+sM["AmmoPerClip"] = math.huge
+sM["Range"] = math.huge
+sM["ReloadTime"] = -math.huge
+sM["Bullets"] = 5
+sM["AutoFire"] = true
+wait(0.1)
+local crimgun = player.Backpack:FindFirstChild("AK-47")
+local sM = require(crimgun:FindFirstChild("GunStates"))
+sM["Damage"] = math.huge
+sM["MaxAmmo"] = math.huge
+sM["CurrentAmmo"] = math.huge
+sM["StoredAmmo"] = math.huge
+sM["FireRate"] = -math.huge
+sM["AmmoPerClip"] = math.huge
+sM["Range"] = math.huge
+sM["ReloadTime"] = -math.huge
+sM["Bullets"] = 5
+sM["AutoFire"] = true
+wait(0.1)
+local assault = player.Backpack:FindFirstChild("M4A1")
+local sM = require(assault:FindFirstChild("GunStates"))
+sM["Damage"] = math.huge
+sM["MaxAmmo"] = math.huge
+sM["CurrentAmmo"] = math.huge
+sM["StoredAmmo"] = math.huge
+sM["FireRate"] = -math.huge
+sM["AmmoPerClip"] = math.huge
+sM["Range"] = math.huge
+sM["ReloadTime"] = -math.huge
+sM["Bullets"] = 5
+sM["AutoFire"] = true
 			elseif msg:match(prefix .. "invis") then
-				local player = game.Players.LocalPlayer
+local player = game.Players.LocalPlayer
 position     = player.Character.HumanoidRootPart.Position
 wait(0.1)
 player.Character:MoveTo(position + Vector3.new(0, 1000000, 0))
@@ -1312,16 +1296,6 @@ wait(0.1)
 player.Character.HumanoidRootPart:Destroy()
 humanoidrootpart.Parent = player.Character
 player.Character:MoveTo(position)
-wait()
--- Remove this if you want to see yourself (others still won't see you)
-game.Players.LocalPlayer.Character.Torso.Transparency = 1
-game.Players.LocalPlayer.Character.Head.Transparency  = 1
-game.Players.LocalPlayer.Character["Left Arm"].Transparency = 1
-game.Players.LocalPlayer.Character["Right Arm"].Transparency = 1
-game.Players.LocalPlayer.Character["Left Leg"].Transparency = 1
-game.Players.LocalPlayer.Character["Right Leg"].Transparency = 1
-game.Players.LocalPlayer.Character.Humanoid:RemoveAccessories()
-game.Players.LocalPlayer.Character.Head.face:Remove()
 			
 			elseif msg:match(prefix .. "adonis") then
 				loadstring(game:HttpGet("https://pastebin.com/raw/MQ3wc7Zq", true))()
@@ -1334,34 +1308,7 @@ game.Players.LocalPlayer.Character.Head.face:Remove()
  
 				Remote:InvokeServer(unpack(Arguments))
 				
-			    elseif msg:match(prefix .. "ca on") then
-_G.toggle = true
-
-while _G.toggle == true do
-wait()
-game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
- 
-Text = ("click arrest on motha fucka go arrest :)");
- 
-Color = Color3.new(0,255,0);
- 
-FontSize = Enum.FontSize.Size24;
- 
-})
- 
-   local mouse = game.Players.LocalPlayer:GetMouse()
-   local arrestEvent = game.Workspace.Remote.arrest
-   mouse.Button1Down:connect(function()
-   local obj = mouse.Target
-   local response = arrestEvent:InvokeServer(obj)
-   end)
-   end
-
-			    elseif msg:match(prefix .. "ca off") then
-_G.toggle = false
-
-while _G.toggle == true do
-wait()
+			    elseif msg:match(prefix .. "ca") then
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
  
 Text = ("click arrest on motha fucka go arrest :)");
@@ -2436,7 +2383,7 @@ end
         ,adonis - fe admin for any game
         ,close - Alt + F4
         ,weaponia - infinite ammo (DOES WORK NOW)
-        ,k [i, g, c, others] - Teamkills (others is broken at the moment but k g and stuff still works)
+        ,k [i, g, c, all] - Teamkills (others is broken at the moment but k g and stuff still works)
         ,walls on - on walls
         ,fences on - on fences
         ,doors on - on doors
@@ -2444,13 +2391,13 @@ end
         ,fences off - off fences
         ,walls off - off walls
         ,ring - rings ears and everybody CAN hear it (doesnt bypass anti crash)
+        ,opguns - mods all guns (might break)
         ,asa on - anti spam arrest (on/off)
         ,asa off - anti spam arrest (on/off)
         ,fix - Camera Fix
         ,btools - (delete certain walls)
         ,display - Display Mode (just use ,time)
-        ,ca on - click arrest (on/off)
-        ,ca off - click arrest (on/off)
+        ,ca - click arrest
         ,tk - touch kill (goes away when you reset)
         ,ltk - touch kill (does not go away when you reset)
         ,asa on - op anti spam arrest (on/off)
