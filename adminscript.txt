@@ -2260,14 +2260,11 @@ local tbl_main =
       "Really red"
 }
 game:GetService("Workspace").Remote.loadchar:InvokeServer(unpack(tbl_main))
-wait(9.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+wait()
 workspace.Remote.TeamEvent:FireServer("Medium stone grey")
-saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-local A_1 = "\66\114\111\121\111\117\98\97\100\100"
-local Event = game:GetService("Workspace").Remote.loadchar
-Event:InvokeServer(A_1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+wait(7)
+end
 end
 
 			elseif msg:match(prefix .. "ff off") then
@@ -2283,13 +2280,10 @@ local tbl_main =
 }
 game:GetService("Workspace").Remote.loadchar:InvokeServer(unpack(tbl_main))
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
-workspace.Remote.TeamEvent:FireServer("Bright orange")
-wait(9.3)
-saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-local A_1 = "\66\114\111\121\111\117\98\97\100\100"
-local Event = game:GetService("Workspace").Remote.loadchar
-Event:InvokeServer(A_1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
+wait()
+workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+wait(7)
+end
 end
 			elseif msg:match(prefix.."crim ") then
 				function EquipTools()
