@@ -2260,10 +2260,10 @@ local tbl_main =
       "Really red"
 }
 game:GetService("Workspace").Remote.loadchar:InvokeServer(unpack(tbl_main))
-wait(0.2)
+wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 workspace.Remote.TeamEvent:FireServer("Medium stone grey")
-wait(9)
+wait(9.3)
 saved = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
