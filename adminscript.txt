@@ -1325,7 +1325,6 @@ FontSize = Enum.FontSize.Size24;
    local obj = mouse.Target
    local response = arrestEvent:InvokeServer(obj)
    end)
-   end
 			    elseif msg:match(prefix .. "ar all") then
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
  
