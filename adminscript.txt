@@ -1,5 +1,5 @@
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Original Script By Midnight#0004 Changes By GETONTHEGROUND#1766",
+	Text = "Original Code From Midnight#0004 Script Changes By GETONTHEGROUND#1766",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
