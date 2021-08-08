@@ -2265,7 +2265,6 @@ wait()
 workspace.Remote.TeamEvent:FireServer("Medium stone grey")
 wait(7)
 end
-end
 
 			elseif msg:match(prefix .. "ff off") then
 _G.toggle = false
@@ -2283,7 +2282,6 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 wait()
 workspace.Remote.TeamEvent:FireServer("Medium stone grey")
 wait(7)
-end
 end
 			elseif msg:match(prefix.."crim ") then
 				function EquipTools()
