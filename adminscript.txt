@@ -1347,7 +1347,7 @@ Event:InvokeServer(A_1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = saved
 wait(0.01)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-936.546631, 94.1287842, 1990.08435)
-				
+end
 			    elseif msg:match(prefix .. "ca") then
 game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
  
