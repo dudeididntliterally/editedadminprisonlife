@@ -712,6 +712,7 @@ spawn(function()
                 getsenv(game.Players.LocalPlayer.Character.ClientInputHandler).cs.isRunning = false
             end)
         end
+end)
             elseif msg:match(prefix .. "god on") then
 _G.toggle = true
  
