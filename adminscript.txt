@@ -967,6 +967,8 @@ sM["AutoFire"] = false
 				end
 			elseif msg:match(prefix .. "re") then
 				loadchar()
+			elseif msg:match(prefix .. "rj") then
+				game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId, Players.LocalPlayer)
 			elseif msg:match(prefix .. "punish on") then
 _G.toggle = true
 
