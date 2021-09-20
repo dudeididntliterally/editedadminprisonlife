@@ -704,6 +704,15 @@ local userdata_1 = game:GetService("Workspace")["Prison_ITEMS"].buttons["Prison 
 local Target = game:GetService("Workspace").Remote.ItemHandler;
 Target:InvokeServer(userdata_1);
 end
+	    elseif msg:match(prefix .. "quick punch") then
+	    	spawn(function()
+    	while wait() do
+        	pcall(function()
+                	getsenv(game.Players.LocalPlayer.Character.ClientInputHandler).cs.isFighting = false
+                	getsenv(game.Players.LocalPlayer.Character.ClientInputHandler).cs.isRunning = false
+            	end)
+        	end
+    	end)
             elseif msg:match(prefix .. "god on") then
 _G.toggle = true
  
