@@ -969,7 +969,21 @@ sM["AutoFire"] = false
 			elseif msg:match(prefix .. "re") then
 				loadchar()
 			elseif msg:match(prefix .. "rj") then
-				loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local Rejoin = coroutine.create(function()
+    local Success, ErrorMessage = pcall(function()
+        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    end)
+
+    if ErrorMessage and not Success then
+        warn(ErrorMessage)
+    end
+end)
+
+coroutine.resume(Rejoin)
 			elseif msg:match(prefix .. "punish on") then
 _G.toggle = true
 
