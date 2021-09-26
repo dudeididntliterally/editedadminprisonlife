@@ -355,7 +355,7 @@ end
 		    Text = "(ALL GUNS) I CANT GUARANTEE YOUR EXPLOIT ITS SELF WONT CRASH OK? also use this carefully please this will (END and RUIN) the server ENJOY!",
 		    Color = Color3.fromRGB(124, 92, 70)
 	            })
-		 local PackageSize = 120000 -- How many bullets is sent through in one remote call. Thanks Globals
+		 local PackageSize = 150000 -- How many bullets is sent through in one remote call. Thanks Globals
                  local SendPackageAmountOfTimes =  15 -- How many times the remote should be called.
 
                  local ReplicatedStorage = game:GetService("ReplicatedStorage")
