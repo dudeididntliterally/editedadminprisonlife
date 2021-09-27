@@ -1,13 +1,13 @@
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Original Code From Midnight#0004 Script Changes By GETONTHEGROUND#1766",
+	Text = "Original Code From Midnight#0004 Script Changes By CurrentlyDead#1766",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Say ,cmds And Look In Console For Cmds",
+	Text = "Say :cmds And Look In Console For Cmds",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Your Prefix Is Currently , (enjoy)",
+	Text = "Your Prefix Is Currently : (enjoy)",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	wait(0.8)
@@ -20,11 +20,6 @@
 	Text = "happy trollin cuh (thanks for using script)",
 	Color = Color3.fromRGB(9, 137, 207)
 	})
-	wait(0.4)
-	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "pastescript.me is dumb because the webhost is gone (Only Commands STILL)",
-	Color = Color3.fromRGB(9, 137, 207)
-	})
   
 	game:GetService("Players").LocalPlayer.PlayerGui.Home.fadeFrame.Visible = false
 
@@ -35,7 +30,7 @@
 	local Player = game:GetService("Players")
 	local LocalPlayer = Player.LocalPlayer
 	local PlayerScripts = LocalPlayer.PlayerScripts
-	local prefix = ","
+	local prefix = ":"
 
 	-- functions --
 	function loadchar(brickcolor)
@@ -2057,18 +2052,6 @@ end
 				loadstring(game:HttpGet('https://raw.githubusercontent.com/dudeididntliterally/slayersadminnotmine/main/slayersadmin.txt'))()
 			elseif msg:match(prefix.."to ") then
 				LocalPlayer.Character.HumanoidRootPart.CFrame = findPlr( msg:sub(5) ).Character.HumanoidRootPart.CFrame
-
-			elseif msg:match(prefix.."display") then
-				local Ligting = game:GetService("Lighting")
-				Ligting.Brightness = 2
-				Ligting.ClockTime = 14
-				Ligting.FogEnd = 100000
-				Ligting.GlobalShadows = false
-				Ligting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
-				for _, v in pairs(game:GetDescendants()) do
-					v.Material = Enum.Material.Plastic
-				end
-
 			elseif msg:match(prefix.."fix") then
 				while wait() do
 					if game.Players.LocalPlayer.Character then
@@ -2351,7 +2334,7 @@ wait()
 workspace.Remote.TeamEvent:FireServer("Medium stone grey")
 wait(7)
 end
-			elseif msg:match(prefix.."crim ") then
+			elseif msg:match(prefix.."crim") then
 				function EquipTools()
 					for a, b in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 						if b:IsA("Tool") and b.Name == "Bring Gun" then
@@ -2431,9 +2414,9 @@ end
         ,god on - op godmode (on/off)
         ,god off - op godmode (on/off)
         ,bring - Brings a player
-        ,crim - Crims a player (just use bring doing this as well)
+        ,crim - makes you crim
         ,to (player) - Tp's to a player
-        ,end - *DISCONNECTS* SERVER [BE CAREFUL]
+        ,end - *DISCONNECTS* SERVER
         ,lguns on - Loopguns
         ,time - full bright
         ,lguns off - unloopguns
@@ -2442,7 +2425,7 @@ end
         ,adonis - fe admin for any game
         ,close - Alt + F4
         ,weaponia - infinite ammo (DOES WORK NOW)
-        ,k [i, g, c, all] - Teamkills (others is broken at the moment but k g and stuff still works)
+        ,k [i, g, c, all] - Teamkills
         ,walls on - on walls
         ,fences on - on fences
         ,doors on - on doors
@@ -2455,7 +2438,6 @@ end
         ,asa off - anti spam arrest (on/off)
         ,fix - Camera Fix
         ,btools - (delete certain walls)
-        ,display - Display Mode (just use ,time)
         ,ca - click arrest
         ,tk - touch kill (goes away when you reset)
         ,ltk - touch kill (does not go away when you reset)
