@@ -60,10 +60,10 @@
 				loadchar("Crimson")
 				_G.CurrentColor = "Crimson"
 				ConsoleMessage("[Color Changer] Your color is now Dark Red")
-			elseif msg:match(prefix .. "t bp") then
-				loadchar("Bright purple")
-				_G.CurrentColor = "Bright purple"
-				ConsoleMessage("[Color Changer] Your color is now Bright purple")
+			elseif msg:match(prefix .. "t g") then
+				loadchar("Dark green")
+				_G.CurrentColor = "Dark green"
+				ConsoleMessage("[Color Changer] Your color is now Dark green")
 			elseif msg:match(prefix .. "t p") then
 				loadchar("Eggplant")
 				_G.CurrentColor = "Eggplant"
@@ -132,10 +132,10 @@
 				loadchar("Really black")
 				_G.CurrentColor = "Really black"
 				ConsoleMessage("[Color Changer] Your color is now Really black")
-			elseif msg:match(prefix .. "t m") then
-				loadchar("Mint")
-				_G.CurrentColor = "Mint"
-				ConsoleMessage("[Color Changer] Your color is now Mint")
+			elseif msg:match(prefix .. "t py") then
+				loadchar("Pastel yellow")
+				_G.CurrentColor = "Pastel yellow"
+				ConsoleMessage("[Color Changer] Your color is now Pastel yellow")
 			elseif msg:match(prefix.."t custom ") then
 				loadchar( msg:sub(11) )
 				ConsoleMessage("[Color Changer] Custom color is " .. msg:sub(11) )
@@ -2502,7 +2502,7 @@ end
         ---Team Stuff---
         :t custom (NUMBER)
         :t dr - DARK RED
-        :t bp - BRIGHT PURPLE
+        :t g - DARK GREEN
         :t p - PURPLE
         :t fb - FAWN BROWN
         :t mg - MID GRAY
@@ -2511,15 +2511,15 @@ end
         :t dt - DARK TAUPE
         :t b - BLACK
         :t c - CAMO
-        :t too - TOOTHPASTE (will be fixed soon)
+        :t too - TOOTHPASTE (just use :t t)
         :t rb - REALLY BLACK
         :t rp - ROYAL PURPLE
         :t sun - SUNRISE
         :t lp - LIGHT PURPLE
-        :t g - GOLD
+        :t lg - LIGHT GOLD
         :t n - NOUGAT
         :t rl - REDDISH LILAC
-        :t m - MINT
+        :t py - PASTEL YELLOW
         :crim
         :g
         :neu
