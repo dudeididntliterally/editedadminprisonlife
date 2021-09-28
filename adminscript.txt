@@ -80,10 +80,6 @@
 				loadchar("Hot pink")
 				_G.CurrentColor = "Hot pink"
 				ConsoleMessage("[Color Changer] Your color is now Hot pink")
-			elseif msg:match(prefix .. "t b") then
-			    	loadchar("Black")
-				_G.CurrentColor = "Black"
-				ConsoleMessage("[Color Changer] Your color is now Black")
 			elseif msg:match(prefix .. "t t") then
 				loadchar("Teal")
 				_G.CurrentColor = "Teal"
@@ -108,10 +104,10 @@
 				loadchar("Light orange")
 				_G.CurrentColor = "Light orange"
 				ConsoleMessage("[Color Changer] Your color is now Light orange")
-			elseif msg:match(prefix .. "t n") then
-				loadchar("Nougat")
-				_G.CurrentColor = "Nougat"
-				ConsoleMessage("[Color Changer] Your color is now Nougat")
+			elseif msg:match(prefix .. "t b") then
+				loadchar("Pastel Blue")
+				_G.CurrentColor = "Pastel Blue"
+				ConsoleMessage("[Color Changer] Your color is now Pastel Blue")
 			elseif msg:match(prefix .. "t rp") then
 				loadchar("Royal purple")
 				_G.CurrentColor = "Royal purple"
@@ -2517,7 +2513,7 @@ end
         :t sun - SUNRISE
         :t lp - LIGHT PURPLE
         :t lg - LIGHT GOLD
-        :t n - NOUGAT
+        :t b - PASTEL BLUE
         :t rl - REDDISH LILAC
         :t y - PASTEL YELLOW
         :crim
