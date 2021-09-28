@@ -132,7 +132,7 @@
 				loadchar("Really black")
 				_G.CurrentColor = "Really black"
 				ConsoleMessage("[Color Changer] Your color is now Really black")
-			elseif msg:match(prefix .. "t py") then
+			elseif msg:match(prefix .. "t y") then
 				loadchar("Pastel yellow")
 				_G.CurrentColor = "Pastel yellow"
 				ConsoleMessage("[Color Changer] Your color is now Pastel yellow")
@@ -2519,7 +2519,7 @@ end
         :t lg - LIGHT GOLD
         :t n - NOUGAT
         :t rl - REDDISH LILAC
-        :t py - PASTEL YELLOW
+        :t y - PASTEL YELLOW
         :crim
         :g
         :neu
