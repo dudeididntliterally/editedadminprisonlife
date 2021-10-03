@@ -343,11 +343,11 @@ end
                 game.Players.LocalPlayer.Backpack["Remington 870"].Parent = game.Players.LocalPlayer.Character
 	         elseif msg:match(prefix .. "end") then
 		    game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-		    Text = "(ALL GUNS) I CANT GUARANTEE YOUR EXPLOIT ITS SELF WONT CRASH OK? also use this carefully please this will (END and RUIN) the server ENJOY!",
+		    Text = "(ALL GUNS) IF YOU DON'T HAVE M4 I DON'T KNOW IF IT WORKS BUT YOU CAN EDIT IT SO IF YOU DON'T HAVE M4 IT WILL WORK BUT IT DOES LESS DAMAGE OK",
 		    Color = Color3.fromRGB(124, 92, 70)
 	            })
 		 local PackageSize = 150000 -- How many bullets is sent through in one remote call. Thanks Globals
-                 local SendPackageAmountOfTimes =  15 -- How many times the remote should be called.
+                 local SendPackageAmountOfTimes =  18 -- How many times the remote should be called.
 
                  local ReplicatedStorage = game:GetService("ReplicatedStorage")
                  local Players = game:GetService("Players")
@@ -362,6 +362,8 @@ end
                  local Tool = Players.LocalPlayer.Backpack["AK-47"]
 		 ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M9"].ITEMPICKUP)
                  local Tool = Players.LocalPlayer.Backpack["M9"]
+		 ItemHandler:InvokeServer(workspace.Prison_ITEMS.giver["M4A1"].ITEMPICKUP)
+                 local Tool = Players.LocalPlayer.Backpack["M4A1"]
 
                  local Packet = {
                  RayObject = Ray.new(Vector3.new(-1, -1, -1), Vector3.new(1, 1, 1)),
