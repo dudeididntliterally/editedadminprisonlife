@@ -104,7 +104,7 @@
 				loadchar("Light orange")
 				_G.CurrentColor = "Light orange"
 				ConsoleMessage("[Color Changer] Your color is now Light orange")
-			elseif msg:match(prefix .. "t b") then
+			elseif msg:match(prefix .. "t pb") then
 				loadchar("Pastel Blue")
 				_G.CurrentColor = "Pastel Blue"
 				ConsoleMessage("[Color Changer] Your color is now Pastel Blue")
@@ -116,10 +116,10 @@
 				loadchar("Gold")
 				_G.CurrentColor = "Gold"
 				ConsoleMessage("[Color Changer] Your color is now Gold")
-			elseif msg:match(prefix .. "t sun") then
-				loadchar("Sunrise")
-				_G.CurrentColor = "Sunrise"
-				ConsoleMessage("[Color Changer] Your color is now Sunrise")
+			elseif msg:match(prefix .. "t b") then
+				loadchar("Black")
+				_G.CurrentColor = "Black"
+				ConsoleMessage("[Color Changer] Your color is now Black")
 			elseif msg:match(prefix .. "t rl") then
 				loadchar("Reddish lilac")
 				_G.CurrentColor = "Reddish lilac"
