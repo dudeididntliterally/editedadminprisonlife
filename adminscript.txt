@@ -1,13 +1,13 @@
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Original Code From Midnight#0004 Script Changes By CurrentlyDead#1766",
+	Text = "Original Code From Midnight#0004 Script Changes By ONTHEGROUNDBURN#1766",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Say :cmds And Look In Console For Cmds",
+	Text = "Say /cmds And Look In Console For Cmds",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
-	Text = "Your Prefix Is Currently : (enjoy)",
+	Text = "Your Prefix Is Currently / (enjoy)",
 	Color = Color3.fromRGB(207, 96, 36)
 	})
 	wait(0.8)
