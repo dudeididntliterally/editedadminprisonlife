@@ -753,10 +753,6 @@ spawn(function()
         end
 end)
             elseif msg:match(prefix .. "god on") then
-_G.toggle = true
- 
-while _G.toggle == true do
-wait()
 _G.GodModeActive = true
 
 -- Variables
@@ -851,11 +847,7 @@ if _G.GodModeActive then
 end
 end
             elseif msg:match(prefix .. "god off") then
-_G.toggle = false
- 
-while _G.toggle == true do
-wait()
-_G.GodModeActive = true
+_G.GodModeActive = false
 
 -- Variables
 local GodPosition = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
